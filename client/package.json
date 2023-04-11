@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "@types/express": "^4.17.17",
+    "@types/http-proxy": "^1.17.10",
+    "axios": "^1.3.4",
+    "esbuild": "^0.17.14",
+    "express": "^4.18.2",
+    "http-parser-js": "^0.5.8",
+    "http-proxy": "^1.18.1",
+    "nexe": "^4.0.0-rc.2",
+    "pkg": "^5.8.1",
+    "tsc": "^2.0.4",
+    "tsc-watch": "^6.0.0",
+    "typescript": "^5.0.2"
+  },
+  "scripts": {
+    "start": "yarn build && node build/index.js",
+    "build": "tsc --noEmit && esbuild index.ts --bundle --platform=node --outfile=build/index.js",
+    "package": "yarn build && pkg build/index.js",
+    "live": "./scripts/live.sh"
+  }
+}
